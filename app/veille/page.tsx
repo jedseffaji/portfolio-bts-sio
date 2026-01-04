@@ -69,6 +69,17 @@ export default function Page() {
           <li>Transmission vers un dispositif externe</li>
           <li>Stimulation du cerveau si nécessaire</li>
         </ul>
+      
+        <figure className="mt-6 text-center">
+          <img
+            src="/images/implants/implant-diagram.png"
+            alt="Schéma d'un implant neurologique avec électrodes et interface"
+            className="mx-auto w-full max-w-2xl rounded-lg shadow-lg"
+          />
+          <figcaption className="mt-3 text-sm text-white/70">
+            Schéma d'un implant neurologique (électrodes et interface)
+          </figcaption>
+        </figure>
       </div>
 
       {/* DOMAINES */}
@@ -118,6 +129,29 @@ export default function Page() {
         </p>
       </div>
 
+      {/* ILLUSTRATIONS */}
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <figure className="text-center">
+          <img
+            src="/images/implants/brain-computer-interface.png"
+            alt="Interface cerveau-machine"
+            className="mx-auto w-full rounded-lg shadow-lg"
+          />
+          <figcaption className="mt-3 text-sm text-white/70">
+            Interface cerveau-machine
+          </figcaption>
+        </figure>
+        <figure className="text-center">
+          <img
+            src="/images/implants/utah-array.png"
+            alt="Grille d'électrodes neurales"
+            className="mx-auto w-full rounded-lg shadow-lg"
+          />
+          <figcaption className="mt-3 text-sm text-white/70">
+            Grille d'électrodes neurales
+          </figcaption>
+        </figure>
+      </div>
       {/* AVANCÉES */}
       <div
         className="
