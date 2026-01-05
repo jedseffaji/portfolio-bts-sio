@@ -16,7 +16,11 @@ export default function Home() {
           BTS SIO • Option SISR
         </p>
 
-        <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+        <p className="mt-6 text-5xl font-extrabold tracking-tight text-white/90 sm:text-6xl lg:text-7xl">
+          PRENOM
+        </p>
+
+        <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
           Portfolio — Systèmes & Réseaux
         </h1>
 
