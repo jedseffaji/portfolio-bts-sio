@@ -282,32 +282,6 @@ export default function Home() {
           </p>
         </Link>
       </div>
-
-      {/* QUICK ORAL */}
-      <div
-        className="
-          mt-8
-          group
-          rounded-2xl
-          border border-white/10
-          bg-white/5
-          p-6
-          transition
-          duration-300
-          hover:bg-white/10
-          hover:-translate-y-1
-          hover:shadow-2xl
-        "
-      >
-        <h2 className="text-lg font-semibold">Pour l’oral (plan rapide)</h2>
-        <ol className="mt-3 list-decimal space-y-1 pl-5 text-white/75">
-          <li>Accueil : structure du portfolio</li>
-          <li>Stages : contexte + missions + compétences</li>
-          <li>Comptes rendus : synthèse des missions</li>
-          <li>Compétences : lien avec SISR (réseau/systèmes/sécurité)</li>
-          <li>Projet pro + veille</li>
-        </ol>
-      </div>
     </main>
   );
 }
