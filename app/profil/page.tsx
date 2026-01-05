@@ -36,7 +36,7 @@ function SchoolCard({ title, formation, imageSrc }: SchoolCardProps) {
 
 export default function Page() {
   return (
-    <Section title="Presentation personnelle" subtitle="Profil, parcours et objectifs professionnels.">
+    <Section title="Profil" subtitle="Presentation personnelle, parcours et objectifs professionnels.">
       {/* PROFIL */}
       <div
         className="

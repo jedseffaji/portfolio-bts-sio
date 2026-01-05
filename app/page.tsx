@@ -16,7 +16,7 @@ export default function Home() {
           BTS SIO • Option SISR
         </p>
 
-        <p className="mt-6 text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-blue-500 to-violet-600 drop-shadow-[0_12px_40px_rgba(59,130,246,0.45)] sm:text-6xl lg:text-7xl">
+        <p className="mt-6 text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-700 to-violet-800 drop-shadow-[0_6px_18px_rgba(59,130,246,0.25)] sm:text-6xl lg:text-7xl">
           Jed SEFFAJI
         </p>
 
@@ -125,7 +125,7 @@ export default function Home() {
       {/* GRID CARDS */}
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <Link
-          href="/moi"
+          href="/profil"
           className="
             group
             flex
@@ -142,7 +142,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Moi</h2>
+          <h2 className="text-lg font-semibold">Profil</h2>
           <p className="mt-2 text-white/75">
             Profil, parcours, qualités et objectifs.
           </p>

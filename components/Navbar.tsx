@@ -18,8 +18,8 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Link href="/moi" className={linkClass}>
-            Moi
+          <Link href="/profil" className={linkClass}>
+            Profil
           </Link>
           <Link href="/bts-sio" className={linkClass}>
             BTS SIO
