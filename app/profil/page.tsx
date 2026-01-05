@@ -192,6 +192,37 @@ export default function Page() {
           environnements reels et une veille technologique reguliere.
         </p>
       </div>
+
+
+      {/* CV */}
+      <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <div className="grid gap-6 lg:grid-cols-[1.4fr,1fr] lg:items-center">
+          <div>
+            <h2 className="text-xl font-semibold">CV</h2>
+            <p className="mt-3 text-white/75">Disponible au format PDF.</p>
+            <a
+              href="/portfolio-pdf/cv.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-2 text-sm font-semibold text-white/90 transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-2xl"
+            >
+              Ouvrir mon CV (PDF)
+            </a>
+          </div>
+
+          <div className="group rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-2xl">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-semibold text-white/80">CV - PDF</span>
+              <span className="rounded-full border border-white/10 bg-white/10 px-2 py-0.5 text-xs text-white/70">
+                PDF
+              </span>
+            </div>
+            <div className="mt-4 flex h-24 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-xs uppercase tracking-[0.2em] text-white/50">
+              Apercu
+            </div>
+          </div>
+        </div>
+      </div>
     </Section>
   );
 }
