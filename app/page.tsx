@@ -16,8 +16,8 @@ export default function Home() {
           BTS SIO • Option SISR
         </p>
 
-        <p className="mt-6 text-5xl font-extrabold tracking-tight text-white/90 sm:text-6xl lg:text-7xl">
-          PRENOM
+        <p className="mt-6 text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-200 to-violet-300 drop-shadow-[0_10px_30px_rgba(59,130,246,0.25)] sm:text-6xl lg:text-7xl">
+          Jed SEFFAJI
         </p>
 
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
