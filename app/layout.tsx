@@ -17,6 +17,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Background />
 
         <Navbar />
+        <div className="mx-auto w-full max-w-5xl px-6 pt-4">
+          <Link
+            href="/"
+            className="inline-flex text-sm text-white/70 transition hover:text-white"
+          >
+            {"\u2190 Retour \u00e0 l'accueil"}
+          </Link>
+        </div>
         <div className="flex-1">{children}</div>
 
         <footer className="border-t border-white/10">

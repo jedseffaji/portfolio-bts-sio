@@ -44,6 +44,19 @@ export default function MentionsLegalesPage() {
         </div>
 
         <div>
+          <h2 className="text-lg font-semibold text-white">
+            {"Protection des donn\u00e9es personnelles (RGPD)"}
+          </h2>
+          <p className="mt-2">
+            {"Ce site ne collecte aucune donn\u00e9e personnelle."}
+            {" Il n'y a pas de formulaire, ni de compte utilisateur."}
+            {" Aucun cookie de suivi ou publicitaire n'est utilis\u00e9."}
+            {" Le site est conforme au RGPD dans la mesure o\u00f9 aucune donn\u00e9e"}
+            {" personnelle n'est trait\u00e9e."}
+          </p>
+        </div>
+
+        <div>
           <h2 className="text-lg font-semibold text-white">Cookies</h2>
           <p className="mt-2">Aucun cookie publicitaire.</p>
         </div>

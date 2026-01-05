@@ -7,15 +7,6 @@ export default function Page() {
       title="BTS SIO et choix SISR"
       subtitle="Presentation de la formation, des options et des raisons de mon orientation SISR."
     >
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href="/"
-          className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 hover:bg-white/10 transition"
-        >
-          {"<- Retour a l'accueil"}
-        </Link>
-      </div>
-
       <div className="mt-6 grid gap-6">
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold">Presentation du BTS SIO</h2>
