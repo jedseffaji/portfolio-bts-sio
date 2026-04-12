@@ -16,7 +16,7 @@ export default function Page() {
 
       <div className="mt-6 grid gap-8">
         <section className="mb-10 rounded-xl border border-white/10 bg-zinc-900 p-6">
-          <h2 className="mb-4 text-3xl font-bold text-white">Contexte</h2>
+          <h2 className="mb-4 text-3xl font-bold text-white">Contexte du projet GSB</h2>
           <div className="space-y-4">
             <p className="text-zinc-200 leading-relaxed">
               Le laboratoire Galaxy Swiss Bourdin (GSB) est une entreprise issue d’une
@@ -35,6 +35,18 @@ export default function Page() {
               infrastructure réseau complète, intégrant des services métiers accessibles
               en interne et depuis l’extérieur.
             </p>
+            <a
+              href="/Comptes%20rendus/missions%20gsb/contexte%20gsb.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+            >
+              <iframe
+                src="/Comptes%20rendus/missions%20gsb/contexte%20gsb.pdf"
+                title="Contexte du projet GSB"
+                className="h-[520px] w-full rounded-xl border border-white/10 bg-black/20"
+              />
+            </a>
           </div>
         </section>
 
