@@ -21,7 +21,7 @@ export default function Page() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Objectif</h2>
+          <h2 className="text-lg font-semibold text-white">Objectif</h2>
           <p className="mt-3 text-white/75">
             Je souhaite évoluer dans les métiers de l’infrastructure en tant que technicien
             systèmes & réseaux (puis administrateur junior), avec une orientation progressive
@@ -48,7 +48,7 @@ export default function Page() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Motivation</h2>
+          <h2 className="text-lg font-semibold text-white">Motivation</h2>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
             <li>Travailler sur des infrastructures réelles (réseau, serveurs, sécurité)</li>
             <li>Comprendre et sécuriser les flux (pare-feu, segmentation, bonnes pratiques)</li>
@@ -73,7 +73,7 @@ export default function Page() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Plan d’action (6–12 mois)</h2>
+          <h2 className="text-lg font-semibold text-white">Plan d’action (6–12 mois)</h2>
           <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
             <li>Renforcer Linux : utilisateurs, services, réseau, logs</li>
             <li>Approfondir Windows Server : AD, GPO, DNS/DHCP, droits</li>
@@ -97,7 +97,7 @@ export default function Page() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Homelab (preuve de progression)</h2>
+          <h2 className="text-lg font-semibold text-white">Homelab (preuve de progression)</h2>
           <p className="mt-3 text-white/75">
             Mise en place d’un environnement de test en virtualisation pour reproduire
             une petite infrastructure et s’entraîner sur des cas réels.
@@ -126,7 +126,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-lg font-semibold">Poursuite / insertion</h2>
+        <h2 className="text-lg font-semibold text-white">Poursuite / insertion</h2>
         <p className="mt-3 text-white/75">
           À court terme, je veux consolider mes compétences SISR via des projets concrets et
           de l’expérience terrain (stage/alternance). À moyen terme, je vise une évolution vers

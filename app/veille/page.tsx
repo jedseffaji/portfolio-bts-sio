@@ -21,7 +21,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Introduction</h2>
+        <h2 className="text-xl font-semibold text-white">Introduction</h2>
         <p className="mt-4 text-white/75">
           Les implants neurologiques, aussi appelés implants cérébraux ou neuroprothèses,
           sont des dispositifs électroniques implantés dans le système nerveux, le plus
@@ -52,7 +52,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Fonctionnement des implants neurologiques</h2>
+        <h2 className="text-xl font-semibold text-white">Fonctionnement des implants neurologiques</h2>
         <p className="mt-4 text-white/75">
           Un implant neurologique fonctionne grâce à un ensemble de micro-électrodes
           placées au contact des neurones. Ces électrodes permettent soit de capter
@@ -98,7 +98,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Domaines d’application</h2>
+        <h2 className="text-xl font-semibold text-white">Domaines d’application</h2>
 
         <h3 className="mt-4 font-semibold">Santé et médecine</h3>
         <p className="mt-2 text-white/75">
@@ -168,7 +168,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Avancées récentes</h2>
+        <h2 className="text-xl font-semibold text-white">Avancées récentes</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
           <li>
             Des patients paralysés ont pu remarcher grâce à une interface reliant le cerveau
@@ -201,7 +201,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Enjeux éthiques et sécuritaires</h2>
+        <h2 className="text-xl font-semibold text-white">Enjeux éthiques et sécuritaires</h2>
         <p className="mt-4 text-white/75">
           Les implants neurologiques soulèvent des questions éthiques majeures, notamment en
           ce qui concerne la protection des données cérébrales et le respect de la vie
@@ -232,7 +232,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Synthèse (niveau BTS SIO)</h2>
+        <h2 className="text-xl font-semibold text-white">Synthèse (niveau BTS SIO)</h2>
         <p className="mt-4 text-white/75">
           Les implants neurologiques sont une technologie innovante combinant informatique,
           électronique et neurosciences. Ils permettent de réparer certaines fonctions
@@ -257,7 +257,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Conclusion</h2>
+        <h2 className="text-xl font-semibold text-white">Conclusion</h2>
         <p className="mt-4 text-white/75">
           Les implants neurologiques représentent une avancée majeure à la frontière entre
           l’humain et la machine. Leur développement pourrait transformer la médecine et les
@@ -281,7 +281,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-xl font-semibold">Sources</h2>
+        <h2 className="text-xl font-semibold text-white">Sources</h2>
         <ul className="mt-4 list-disc space-y-1 pl-5 text-white/75">
           <li>Inserm – Neuroprothèses et implants cérébraux</li>
           <li>Wikipédia – Implant cérébral</li>

@@ -9,6 +9,13 @@ const comptesRendus = [
   { label: "Projets personnels", href: "/comptes-rendus/projets-personnels" },
 ];
 
+const stages = [
+  { label: "Biogroup", href: "/stages#biogroup" },
+  { label: "XpertDiag\u2019Immo", href: "/stages#xpertdiag-immo" },
+  { label: "UTB", href: "/stages#utb" },
+  { label: "Elior", href: "/stages#elior" },
+];
+
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/40 backdrop-blur">
@@ -24,9 +31,43 @@ export default function Navbar() {
           <Link href="/bts-sio" className={linkClass}>
             BTS SIO
           </Link>
-          <Link href="/stages" className={linkClass}>
-            Stages
-          </Link>
+          <div className="group relative flex items-center">
+            <Link href="/stages" className={`${linkClass} inline-flex items-center gap-1`}>
+              Stages
+              <span className="text-xs text-white/50">v</span>
+            </Link>
+            <div className="absolute left-0 top-full z-50 pt-2 pointer-events-none group-hover:pointer-events-auto">
+              <div
+                className="
+                  w-56
+                  origin-top
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-black/90
+                  p-2
+                  opacity-0
+                  shadow-2xl
+                  backdrop-blur
+                  transition
+                  duration-300
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  translate-y-1
+                "
+              >
+                {stages.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block w-full rounded-xl px-4 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white transition"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <div className="group relative flex items-center">
             <Link href="/comptes-rendus" className={`${linkClass} inline-flex items-center gap-1`}>
@@ -70,7 +111,7 @@ export default function Navbar() {
             Projet pro
           </Link>
           <Link href="/competences" className={linkClass}>
-            Competences
+            Compétences
           </Link>
           <Link href="/veille" className={linkClass}>
             Veille

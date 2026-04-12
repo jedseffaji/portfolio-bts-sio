@@ -104,7 +104,7 @@ export default function Page() {
               hover:shadow-2xl
             "
           >
-            <h2 className="text-lg font-semibold">{b.titre}</h2>
+            <h2 className="text-lg font-semibold text-white">{b.titre}</h2>
             <p className="mt-2 text-white/75">{b.intro}</p>
 
             <h3 className="mt-4 text-sm font-semibold text-white/85">Compétences</h3>
@@ -139,7 +139,7 @@ export default function Page() {
           hover:shadow-2xl
         "
       >
-        <h2 className="text-lg font-semibold">Savoir-être</h2>
+        <h2 className="text-lg font-semibold text-white">Savoir-être</h2>
         <p className="mt-2 text-white/75">
           Qualités mobilisées en formation et en stage, importantes en environnement informatique.
         </p>

@@ -5,6 +5,7 @@ const companies = [
   { name: "BIOGROUP", src: "/logos/biogroup.png", initials: "BG" },
   { name: "XPERTDIAG’IMMO", src: "/logos/xpertdiag.png", initials: "XD" },
   { name: "UTB", src: "/logos/utb.png", initials: "UTB" },
+  { name: "ELIOR", src: "/logos/Elior.png", initials: "EL", href: "/stages#elior" },
 ];
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
           Jed SEFFAJI
         </p>
 
-        <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">
+        <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
           Portfolio — Systèmes & Réseaux
         </h1>
 
@@ -99,6 +100,29 @@ export default function Home() {
           >
             Veille technologique
           </Link>
+          <Link
+            href="/stages#elior"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              text-center
+              rounded-2xl
+              border border-white/10
+              bg-white/5
+              px-5
+              py-2
+              text-sm
+              text-white/90
+              transition
+              duration-300
+              hover:bg-white/10
+              hover:-translate-y-1
+              hover:shadow-2xl
+            "
+          >
+            Entreprise Elior
+          </Link>
         </div>
       </div>
 
@@ -107,17 +131,32 @@ export default function Home() {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm font-semibold text-white/80">Entreprises</p>
           <div className="flex flex-wrap items-center gap-3">
-            {companies.map((company) => (
-              <CompanyLogo
-                key={company.name}
-                src={company.src}
-                alt={`Logo ${company.name}`}
-                initials={company.initials}
-                size="sm"
-                className="bg-white/5"
-                imgClassName="grayscale hover:grayscale-0"
-              />
-            ))}
+            {companies.map((company) => {
+              const isElior = company.name === "ELIOR";
+              const logo = (
+                <CompanyLogo
+                  key={company.name}
+                  src={company.src}
+                  alt={`Logo ${company.name}`}
+                  initials={company.initials}
+                  size="sm"
+                  className="bg-white/5"
+                  imgClassName={
+                    isElior
+                      ? "grayscale hover:grayscale-0 rounded-full object-cover"
+                      : "grayscale hover:grayscale-0"
+                  }
+                />
+              );
+
+              return company.href ? (
+                <Link key={company.name} href={company.href} className="inline-flex">
+                  {logo}
+                </Link>
+              ) : (
+                logo
+              );
+            })}
           </div>
         </div>
       </div>
@@ -142,7 +181,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Profil</h2>
+          <h2 className="text-lg font-semibold text-white">Profil</h2>
           <p className="mt-2 text-white/75">
             Profil, parcours, qualités et objectifs.
           </p>
@@ -169,9 +208,9 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Stages</h2>
+          <h2 className="text-lg font-semibold text-white">Stages</h2>
           <p className="mt-2 text-white/75">
-            3 stages : contexte, missions, outils et documents.
+            4 stages : contexte, missions, outils et documents.
           </p>
           <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
             Ouvrir →
@@ -196,7 +235,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Comptes rendus</h2>
+          <h2 className="text-lg font-semibold text-white">Comptes rendus</h2>
           <p className="mt-2 text-white/75">
             Synthèse des missions réalisées et compétences mobilisées.
           </p>
@@ -223,7 +262,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Projet professionnel</h2>
+          <h2 className="text-lg font-semibold text-white">Projet professionnel</h2>
           <p className="mt-2 text-white/75">
             Objectif, plan d’action et progression.
           </p>
@@ -250,7 +289,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Compétences</h2>
+          <h2 className="text-lg font-semibold text-white">Compétences</h2>
           <p className="mt-2 text-white/75">
             Systèmes, réseau, sécurité, virtualisation.
           </p>
@@ -277,7 +316,7 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold">Veille technologique</h2>
+          <h2 className="text-lg font-semibold text-white">Veille technologique</h2>
           <p className="mt-2 text-white/75">
             Implants neurologiques : usages, avancées, enjeux.
           </p>

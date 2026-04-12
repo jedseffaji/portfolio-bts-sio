@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CompanyLogo from "../../components/CompanyLogo";
 import Section from "../../components/Section";
 
@@ -7,15 +8,23 @@ type Stage = {
   entreprise: string;
   logoSrc: string;
   logoInitials: string;
+  id: string;
   ville: string;
   dates: string;
   descriptionEntreprise: string;
   missions: string[];
   technos: string[];
   documents: Document[];
+  procedures?: Document[];
 };
 
 const PDF_BASE = "/portfolio-pdf";
+
+const compteRenduRoutes: Record<string, string> = {
+  biogroup: "/stages/biogroup/compte-rendu",
+  "xpertdiag-immo": "/stages/xpertdiagimmo/compte-rendu",
+  utb: "/stages/utb/compte-rendu",
+};
 
 const stages: Stage[] = [
   {
@@ -23,8 +32,9 @@ const stages: Stage[] = [
     entreprise: "BIOGROUP",
     logoSrc: "/logos/biogroup.png",
     logoInitials: "BG",
+    id: "biogroup",
     ville: "Levallois-Perret",
-    dates: "Octobre à décembre 2023",
+    dates: "Octobre – décembre 2023",
     descriptionEntreprise:
       "BIOGROUP est un groupe spécialisé dans les analyses médicales. Les laboratoires utilisent des automates et des outils informatiques pour assurer la fiabilité et la traçabilité des analyses biologiques.",
     missions: [
@@ -44,8 +54,9 @@ const stages: Stage[] = [
     entreprise: "XPERTDIAG’IMMO",
     logoSrc: "/logos/xpertdiag.png",
     logoInitials: "XD",
+    id: "xpertdiag-immo",
     ville: "Nantes",
-    dates: "Juin à août 2023",
+    dates: "Juin – août 2023",
     descriptionEntreprise:
       "XPERTDIAG’IMMO est une entreprise spécialisée dans les diagnostics immobiliers. Elle utilise des outils métiers pour la gestion des expertises et des données clients.",
     missions: [
@@ -65,6 +76,7 @@ const stages: Stage[] = [
     entreprise: "UTB",
     logoSrc: "/logos/utb.png",
     logoInitials: "UTB",
+    id: "utb",
     ville: "Romainville",
     dates: "Juin 2025 (6 semaines)",
     descriptionEntreprise:
@@ -81,6 +93,48 @@ const stages: Stage[] = [
       { label: "Compte rendu de stage (PDF)", href: `${PDF_BASE}/utb-compte-rendu.pdf` },
     ],
   },
+  {
+    titre: "Stage - Elior Group",
+    entreprise: "Elior Group",
+    logoSrc: "/logos/Elior.png",
+    logoInitials: "EL",
+    id: "elior",
+    ville: "Nantes",
+    dates: "2024",
+    descriptionEntreprise:
+      "Elior Group est un acteur majeur de la restauration collective et des services associés. L'entreprise gère de nombreux sites et s'appuie sur une infrastructure informatique importante pour assurer la continuité des activités, le support utilisateur et le fonctionnement des outils métiers.",
+    missions: [
+      "Préparation et configuration de postes utilisateurs",
+      "Masterisation SES sur des machines Dell",
+      "Gestion des différences matérielles entre modèles de postes",
+      "Correction de problèmes de drivers lors de déploiements",
+      "Utilisation d'un assistant d'installation interne Elior",
+      "Copie de fichiers nécessaires dans des répertoires système spécifiques",
+      "Amélioration de raccourcis RDP pour l'accès à certaines applications Elior",
+      "Support technique aux utilisateurs",
+      "Travail en environnement Active Directory",
+      "Observation et diagnostic de postes hors domaine",
+      "Prise en compte d'outils et contraintes : LAPS, BitLocker, GlobalProtect",
+    ],
+    technos: [
+      "Masterisation",
+      "Standardisation de déploiement",
+      "Support informatique",
+      "Active Directory",
+      "Accès RDP",
+      "Windows en entreprise",
+      "Gestion de parc",
+      "Procédures internes",
+    ],
+    documents: [],
+    procedures: [
+      { label: "Installation / configuration GPU (3080)", href: "/procedures-Elior/3080.pdf" },
+      { label: "Gestion des mots de passe (KeePass)", href: "/procedures-Elior/keepass.pdf" },
+      { label: "Masterisation SES", href: "/procedures-Elior/SES.pdf" },
+      { label: "S\u00e9curit\u00e9 YubiKey", href: "/procedures-Elior/Yubikey.pdf" },
+    ],
+  },
+
 ];
 
 export default function Page() {
@@ -90,10 +144,14 @@ export default function Page() {
       subtitle="Présentation des stages réalisés en entreprise : contexte, missions, outils et documents."
     >
       <div className="grid gap-4">
-        {stages.map((s) => (
-          <article
-            key={s.titre}
-            className="
+        {stages.map((s) => {
+          const isElior = s.entreprise === "Elior Group";
+
+          return (
+            <article
+              key={s.titre}
+              id={s.id}
+              className="
               group
               rounded-2xl
               border border-white/10
@@ -116,7 +174,7 @@ export default function Page() {
                   className="shrink-0"
                 />
                 <div>
-                  <h2 className="text-xl font-semibold">{s.titre}</h2>
+                  <h2 className="text-xl font-semibold text-white">{s.titre}</h2>
                   <p className="mt-1 text-white/70">
                     {s.entreprise} — {s.ville}
                   </p>
@@ -124,42 +182,6 @@ export default function Page() {
               </div>
               <div className="flex flex-col items-start gap-2 sm:items-end">
                 <p className="text-sm text-white/60">{s.dates}</p>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs text-white/60">Compte rendu</span>
-                  {s.documents[0]?.href ? (
-                    <a
-                      href={s.documents[0].href}
-                      target="_blank"
-                      className="
-                        group
-                        relative
-                        h-16
-                        w-16
-                        rounded-xl
-                        border
-                        border-white/15
-                        bg-white/5
-                        text-xs
-                        font-semibold
-                        text-white/80
-                        shadow-sm
-                        transition
-                        duration-300
-                        hover:-translate-y-1
-                        hover:scale-[1.03]
-                        hover:border-white/30
-                        hover:shadow-lg
-                      "
-                    >
-                      <span className="absolute right-0 top-0 h-4 w-4 rounded-bl-lg border-l border-b border-white/20 bg-white/10" />
-                      <span className="absolute inset-0 flex items-center justify-center">PDF</span>
-                    </a>
-                  ) : (
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60">
-                      PDF bientôt dispo
-                    </span>
-                  )}
-                </div>
               </div>
             </div>
 
@@ -189,22 +211,69 @@ export default function Page() {
                 </div>
 
                 <h3 className="mt-5 text-sm font-semibold text-white/85">Documents</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {s.documents.map((d) => (
-                    <a
-                      key={d.href}
-                      href={d.href}
-                      target="_blank"
-                      className="inline-flex items-center justify-center text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/85 hover:bg-white/10 transition"
-                    >
-                      {d.label}
-                    </a>
-                  ))}
-                </div>
+                {isElior ? (
+                  <p className="text-sm text-white/60">
+                    Procédures disponibles sur la page dédiée.
+                  </p>
+                ) : (
+                  <p className="text-sm text-white/60">
+                    Compte rendu disponible sur la page dédiée.
+                  </p>
+                )}
               </div>
             </div>
+
+            <div className="mt-6 flex justify-end">
+              {isElior ? (
+                <Link
+                  href="/stages/elior/procedures"
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-center
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/5
+                    px-8
+                    py-4
+                    text-lg
+                    font-semibold
+                    text-white
+                    hover:bg-white/10
+                    transition
+                  "
+                >
+                  Procédures
+                </Link>
+              ) : (
+                <Link
+                  href={compteRenduRoutes[s.id]}
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-center
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/5
+                    px-8
+                    py-4
+                    text-lg
+                    font-semibold
+                    text-white
+                    hover:bg-white/10
+                    transition
+                  "
+                >
+                  Compte rendu
+                </Link>
+              )}
+            </div>
+
           </article>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );
