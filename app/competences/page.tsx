@@ -1,96 +1,106 @@
 import Section from "../../components/Section";
 
-type Bloc = {
-  titre: string;
-  intro: string;
+type SkillBlock = {
+  title: string;
+  summary: string;
   items: string[];
-  exemples: string[];
 };
 
-const blocs: Bloc[] = [
+const technicalBlocks: SkillBlock[] = [
   {
-    titre: "Systèmes",
-    intro: "Mise en place et administration de services Windows/Linux.",
+    title: "Systèmes",
+    summary: "Administration de serveurs, services Windows/Linux et annuaires.",
     items: [
-      "Windows Server 2022 : installation et configuration",
-      "Active Directory (AD DS) : utilisateurs, groupes, droits",
-      "Services réseau : DNS, DHCP",
-      "Stratégies de groupe (GPO) : principes et usages",
-      "Linux : configuration réseau, gestion des utilisateurs, services de base",
-    ],
-    exemples: [
-      "Création/gestion de comptes et droits (approche moindre privilège)",
-      "Mise en place de services (DNS/DHCP) dans un environnement de test",
-      "Dépannage de base : réseau, accès, services",
+      "Windows Server 2022 : déploiement et administration",
+      "Linux Debian : configuration et maintenance",
+      "Active Directory : gestion des comptes et des groupes",
+      "Organisation des OU et délégations de droits",
+      "Réplication de services et continuité",
+      "Administration de serveurs et services essentiels",
     ],
   },
   {
-    titre: "Réseau",
-    intro: "Conception et mise en œuvre d’une infrastructure réseau simple.",
+    title: "Réseau",
+    summary: "Conception d’architectures segmentées et routage sécurisé.",
     items: [
-      "Plan d’adressage IP (subnetting, passerelle, cohérence)",
-      "VLAN : segmentation et logique réseau",
-      "Routage statique : interconnexion de sous-réseaux",
-      "Passerelles et services (DHCP, DNS) dans un réseau",
-    ],
-    exemples: [
-      "Configuration de VLAN et vérification de la connectivité",
-      "Mise en place de routage statique entre sous-réseaux",
-      "Tests réseau : ping, traceroute, ipconfig/ifconfig, etc.",
+      "VLAN et segmentation réseau",
+      "Routage inter-VLAN et configuration 802.1Q",
+      "NAT et port forwarding",
+      "DNS / DHCP et services d’infrastructure",
+      "Architecture LAN / DMZ / WAN / WIFI",
+      "Isolation des flux et contrôle des accès",
     ],
   },
   {
-    titre: "Sécurité",
-    intro: "Bonnes pratiques + configuration de sécurité réseau (niveau SISR).",
+    title: "Sécurité",
+    summary: "Mise en œuvre de politiques de filtrage et durcissement.",
     items: [
-      "Pare-feu : règles de filtrage et contrôle des flux",
-      "Proxy / filtrage web avec pfSense",
-      "Surveillance du trafic : observation et analyse simple",
-      "Bonnes pratiques : mises à jour, mots de passe, durcissement",
-    ],
-    exemples: [
-      "Configuration de firewall (stage UTB : règles et vérifications)",
-      "Filtrage web avec pfSense (proxy)",
-      "Application du principe du moindre privilège et documentation",
+      "pfSense : pare-feu, filtrage des flux",
+      "Règles firewall et restriction d’accès par IP",
+      "Journalisation des connexions et traçabilité",
+      "HTTPS et sécurisation des services exposés",
+      "Isolation du WIFI et segmentation des accès",
     ],
   },
   {
-    titre: "Virtualisation & outils",
-    intro: "Travail en environnement virtualisé + outillage de base d’un technicien SISR.",
+    title: "Virtualisation et outils",
+    summary: "Environnements virtualisés et outils métiers.",
     items: [
-      "VMware : création et gestion de machines virtuelles",
-      "Mise en réseau de plusieurs VM (client, serveur, pare-feu)",
-      "Ticketing : traitement d’incidents et suivi",
-      "Documentation : procédures, comptes rendus, structuration",
-      "Outils : VS Code, commandes réseau Windows/Linux",
-    ],
-    exemples: [
-      "Environnement de lab : client/serveur/pfSense en VM",
-      "Traitement de tickets (stage UTB) : diagnostic → action → vérification → clôture",
-      "Rédaction de procédures (déploiement, manip, etc.)",
+      "pfSense virtualisé",
+      "VMware et Proxmox",
+      "GLPI (gestion de parc)",
+      "Nextcloud (cloud interne)",
+      "Apache, MariaDB, Rainloop",
+      "Postfix et Dovecot",
     ],
   },
-];
-
-const softSkills = [
-  "Esprit d’équipe",
-  "Autonomie",
-  "Polyvalence",
-  "Communication",
-  "Gestion de projet (organisation, priorisation)",
-  "Rigueur (tests, validation, traçabilité)",
+  {
+    title: "Automatisation",
+    summary: "Scripts et tâches répétitives sécurisées.",
+    items: [
+      "Scripts PowerShell",
+      "Création automatisée de comptes",
+      "Suppression automatisée de comptes",
+      "Gestion automatisée des OU",
+      "Traçabilité via fichiers logs",
+    ],
+  },
+  {
+    title: "Supervision",
+    summary: "Monitoring, analyse de trafic et détection d’anomalies.",
+    items: [
+      "Zabbix : monitoring des serveurs et services",
+      "Wireshark : analyse du trafic réseau",
+      "Surveillance des performances",
+      "Détection d’anomalies et alerting",
+      "Analyse des flux réseau",
+    ],
+  },
+  {
+    title: "Savoir-être",
+    summary: "Qualités professionnelles mobilisées en environnement SISR.",
+    items: [
+      "Rigueur",
+      "Autonomie",
+      "Esprit d’analyse",
+      "Travail en équipe",
+      "Capacité d’adaptation",
+      "Sens de l’organisation",
+      "Résolution de problèmes",
+    ],
+  },
 ];
 
 export default function Page() {
   return (
     <Section
-      title="Compétences (SISR)"
-      subtitle="Synthèse des compétences techniques et méthodes de travail (formation + stages)."
+      title="Compétences"
+      subtitle="Compétences développées à travers les stages et les projets techniques réalisés pendant le BTS SIO SISR."
     >
-      <div className="grid gap-4 sm:grid-cols-2">
-        {blocs.map((b) => (
+      <div className="grid gap-5 sm:grid-cols-2">
+        {technicalBlocks.map((block) => (
           <div
-            key={b.titre}
+            key={block.title}
             className="
               group
               rounded-2xl
@@ -104,56 +114,19 @@ export default function Page() {
               hover:shadow-2xl
             "
           >
-            <h2 className="text-lg font-semibold text-white">{b.titre}</h2>
-            <p className="mt-2 text-white/75">{b.intro}</p>
-
-            <h3 className="mt-4 text-sm font-semibold text-white/85">Compétences</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-white/75">
-              {b.items.map((i) => (
-                <li key={i}>{i}</li>
-              ))}
-            </ul>
-
-            <h3 className="mt-4 text-sm font-semibold text-white/85">Exemples concrets</h3>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-white/75">
-              {b.exemples.map((e) => (
-                <li key={e}>{e}</li>
-              ))}
-            </ul>
+            <h2 className="text-lg font-semibold text-white">{block.title}</h2>
+            <p className="mt-2 text-white/70">{block.summary}</p>
+            <div className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4">
+              <ul className="list-disc space-y-1 pl-5 text-white/80">
+                {block.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
 
-      <div
-        className="
-          mt-10
-          group
-          rounded-2xl
-          border border-white/10
-          bg-white/5
-          p-6
-          transition
-          duration-300
-          hover:bg-white/10
-          hover:-translate-y-1
-          hover:shadow-2xl
-        "
-      >
-        <h2 className="text-lg font-semibold text-white">Savoir-être</h2>
-        <p className="mt-2 text-white/75">
-          Qualités mobilisées en formation et en stage, importantes en environnement informatique.
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {softSkills.map((s) => (
-            <span
-              key={s}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      </div>
     </Section>
   );
 }
