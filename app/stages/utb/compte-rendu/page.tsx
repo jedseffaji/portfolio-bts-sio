@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Section from "../../../../components/Section";
 
-const PDF_HREF = "/Comptes%20rendus/utb.pdf";
+const PDF_HREF = "/Comptes%20rendus/stages/utb.pdf";
 
 export default function Page() {
   return (

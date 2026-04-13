@@ -91,8 +91,8 @@ const missionGroups: MissionGroup[] = [
       "Bloc rassemblant les supports de travail, fiches pratiques et consignes utilisées pour cadrer plusieurs missions indépendantes réalisées en cours.",
     documents: [
       {
-        title: "Consigne atelier2",
-        href: "/Comptes%20rendus/ind%C3%A9/Consigne%20atelier2.pdf",
+        title: "Fiche pratique Atelier 1",
+        href: "/Comptes%20rendus/ind%C3%A9/Fiche%20pratique%20Atelier%201.pdf",
       },
       {
         title: "Consigne atelier3",
@@ -101,10 +101,6 @@ const missionGroups: MissionGroup[] = [
       {
         title: "Consigne atelier4",
         href: "/Comptes%20rendus/ind%C3%A9/Consigne%20atelier4.pdf",
-      },
-      {
-        title: "Fiche pratique Atelier 1",
-        href: "/Comptes%20rendus/ind%C3%A9/Fiche%20pratique%20Atelier%201.pdf",
       },
     ],
   },
@@ -124,8 +120,8 @@ const missionGroups: MissionGroup[] = [
 export default function Page() {
   return (
     <Section
-      title="Missions indÃ©pendantes"
-      subtitle="Missions techniques rÃ©alisÃ©es en dehors des projets principaux, dans une logique d'apprentissage, de test et de progression."
+      title="Missions indépendantes"
+      subtitle="Missions techniques réalisées en dehors des projets principaux, dans une logique d'apprentissage, de test et de progression."
     >
       <Link
         href="/comptes-rendus"
@@ -137,9 +133,9 @@ export default function Page() {
       <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
         <h2 className="text-xl font-semibold text-white">Introduction</h2>
         <p className="mt-3 text-white/75 leading-relaxed">
-          Cette page regroupe les missions techniques rÃ©alisÃ©es individuellement en cours.
-          Les documents sont organisÃ©s par thÃ¨me afin de distinguer clairement chaque
-          mission, tout en conservant l'ensemble des PDF associÃ©s dans un mÃªme bloc.
+          Cette page regroupe les missions techniques réalisées individuellement en cours.
+          Les documents sont organisés par thème afin de distinguer clairement chaque
+          mission, tout en conservant l'ensemble des PDF associés dans un même bloc.
         </p>
       </div>
 

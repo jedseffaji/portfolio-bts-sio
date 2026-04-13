@@ -113,6 +113,12 @@ export default function Navbar() {
           <Link href="/competences" className={linkClass}>
             Compétences
           </Link>
+          <Link href="/certificats" className={linkClass}>
+            Certificats
+          </Link>
+          <Link href="/e5" className={linkClass}>
+            E5
+          </Link>
           <Link href="/veille" className={linkClass}>
             Veille
           </Link>
