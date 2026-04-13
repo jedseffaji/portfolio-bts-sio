@@ -39,9 +39,19 @@ export default function Page() {
         {procedures.map((doc) => (
           <div
             key={doc.href}
-            className="rounded-2xl border border-white/10 bg-white/5 p-5"
+            className="rounded-2xl border border-white/10 bg-white/5 p-6"
           >
             <h2 className="text-lg font-semibold text-white">{doc.title}</h2>
+            <div className="mt-4 flex justify-end">
+              <a
+                href={doc.href}
+                target="_blank"
+                rel="noreferrer"
+                className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+              >
+                Voir le document en grand
+              </a>
+            </div>
             <a
               href={doc.href}
               target="_blank"

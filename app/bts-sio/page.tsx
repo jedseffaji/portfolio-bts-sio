@@ -30,7 +30,7 @@ export default function Page() {
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Les deux options du BTS SIO</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Option SLAM</h3>
               <p className="mt-2 text-white/75 leading-relaxed">
                 SLAM (Solutions Logicielles et Applications Métiers) est orienté
@@ -46,7 +46,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Option SISR</h3>
               <p className="mt-2 text-white/75 leading-relaxed">
                 SISR (Solutions d'Infrastructure, Systèmes et Réseaux) est
@@ -96,7 +96,7 @@ export default function Page() {
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Compétences développées en SISR</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Systèmes</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
                 <li>Installation et administration Windows/Linux.</li>
@@ -104,7 +104,7 @@ export default function Page() {
                 <li>Gestion des comptes et des droits.</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Réseau</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
                 <li>VLAN, routage, Wi-Fi.</li>
@@ -112,7 +112,7 @@ export default function Page() {
                 <li>Configuration de switches et routeurs.</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Sécurité</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
                 <li>Règles pare-feu et filtrage.</li>
@@ -120,7 +120,7 @@ export default function Page() {
                 <li>Surveillance basique et durcissement.</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <h3 className="text-lg font-semibold text-white">Méthodologie</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
                 <li>Diagnostic et tests progressifs.</li>

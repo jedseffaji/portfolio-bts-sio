@@ -11,13 +11,12 @@ const companies = [
 export default function Home() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-14">
-      {/* HERO */}
       <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10">
         <p className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80">
           BTS SIO • Option SISR
         </p>
 
-        <p className="mt-6 text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-700 to-violet-800 drop-shadow-[0_6px_18px_rgba(59,130,246,0.25)] sm:text-6xl lg:text-7xl">
+        <p className="mt-6 bg-gradient-to-r from-blue-600 via-indigo-700 to-violet-800 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent drop-shadow-[0_6px_18px_rgba(59,130,246,0.25)] sm:text-6xl lg:text-7xl">
           Jed SEFFAJI
         </p>
 
@@ -26,7 +25,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-white/75">
-          Bienvenue sur mon portfolio. Vous y trouverez mes stages, mes comptes rendus,
+          Bienvenue sur mon portfolio. Vous y trouverez mes stages, mes missions,
           mes compétences SISR, mon projet professionnel et ma veille technologique.
         </p>
 
@@ -126,7 +125,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ENTREPRISES */}
       <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm font-semibold text-white/80">Entreprises</p>
@@ -161,7 +159,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* GRID CARDS */}
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <Link
           href="/profil"
@@ -185,7 +182,7 @@ export default function Home() {
           <p className="mt-2 text-white/75">
             Profil, parcours, qualités et objectifs.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>
@@ -212,7 +209,7 @@ export default function Home() {
           <p className="mt-2 text-white/75">
             4 stages : contexte, missions, outils et documents.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>
@@ -235,11 +232,11 @@ export default function Home() {
             hover:shadow-2xl
           "
         >
-          <h2 className="text-lg font-semibold text-white">Comptes rendus</h2>
+          <h2 className="text-lg font-semibold text-white">Missions</h2>
           <p className="mt-2 text-white/75">
-            Synthèse des missions réalisées et compétences mobilisées.
+            GSB, Soccer et missions indépendantes présentés dans un espace unique.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>
@@ -266,7 +263,7 @@ export default function Home() {
           <p className="mt-2 text-white/75">
             Objectif, plan d’action et progression.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>
@@ -293,7 +290,7 @@ export default function Home() {
           <p className="mt-2 text-white/75">
             Systèmes, réseau, sécurité, virtualisation.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>
@@ -320,7 +317,7 @@ export default function Home() {
           <p className="mt-2 text-white/75">
             Implants neurologiques : usages, avancées, enjeux.
           </p>
-          <p className="mt-auto pt-4 text-sm text-white/60 group-hover:text-white/80 transition">
+          <p className="mt-auto pt-4 text-sm text-white/60 transition group-hover:text-white/80">
             Ouvrir →
           </p>
         </Link>

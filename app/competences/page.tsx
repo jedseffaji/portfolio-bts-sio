@@ -116,7 +116,7 @@ export default function Page() {
           >
             <h2 className="text-lg font-semibold text-white">{block.title}</h2>
             <p className="mt-2 text-white/70">{block.summary}</p>
-            <div className="mt-4 rounded-xl border border-white/10 bg-black/30 p-4">
+            <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-6">
               <ul className="list-disc space-y-1 pl-5 text-white/80">
                 {block.items.map((item) => (
                   <li key={item}>{item}</li>

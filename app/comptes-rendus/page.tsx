@@ -1,7 +1,7 @@
 import Section from "../../components/Section";
 import Link from "next/link";
 
-type Projet = {
+type MissionCategory = {
   titre: string;
   sousTitre: string;
   description: string;
@@ -10,56 +10,56 @@ type Projet = {
   resume: string;
 };
 
-const projets: Projet[] = [
-  {
-    titre: "Soccer78",
-    sousTitre: "Projet de 1re année - BTS SIO (SISR)",
-    description:
-      "Mise en place d'une infrastructure complète : AD, DNS/DHCP, VLAN, Wi-Fi et documentation. Projet orienté déploiement et bonnes pratiques.",
-    tags: ["Projet", "1re année", "Infra", "AD"],
-    href: "/comptes-rendus/soccer78",
-    resume:
-      "Installation d'un serveur Windows, structuration de l'Active Directory, services DNS/DHCP, segmentation VLAN et mise en service du Wi-Fi. Projet de fondations techniques et de méthodologie.",
-  },
+const categories: MissionCategory[] = [
   {
     titre: "GSB",
     sousTitre: "Projet de 2e année - BTS SIO (SISR)",
     description:
-      "Orientation réseau + sécurité : segmentation, pfSense, interconnexion, durcissement et tests. Approche plus avancée.",
-    tags: ["Projet", "2e année", "Sécurité", "Réseau"],
+      "Missions d'infrastructure systèmes et réseaux autour de la segmentation, de la sécurité et du déploiement de services.",
+    tags: ["Missions", "2e année", "Sécurité", "Réseau"],
     href: "/comptes-rendus/gsb",
     resume:
-      "Renforcement sécurité, règles pare-feu, NAT, routage inter-VLAN, supervision et validation. Projet centré sur la protection, les flux et la résilience.",
+      "Contexte du laboratoire, architecture réseau, missions techniques et documents PDF associés pour chaque étape du projet.",
   },
   {
-    titre: "Projets personnels",
-    sousTitre: "Travaux réalisés en autonomie (hors cours)",
+    titre: "Soccer",
+    sousTitre: "Projet de 1re année - BTS SIO (SISR)",
     description:
-      "Espace d'expérimentation et de progression : tests, mini-labs, documentation perso.",
-    tags: ["Autonomie", "Curiosité", "Progression"],
-    href: "/comptes-rendus/projets-personnels",
+      "Missions de déploiement et d'administration pour construire une infrastructure Windows et réseau cohérente.",
+    tags: ["Missions", "1re année", "AD", "Infrastructure"],
+    href: "/comptes-rendus/soccer78",
     resume:
-      "Page d'attente pour détailler mes projets personnels : objectifs, résultats, outils et liens.",
+      "Contexte du projet, missions réalisées, organisation du système d'information et compétences mobilisées en environnement PME.",
+  },
+  {
+    titre: "Missions indépendantes",
+    sousTitre: "Travaux techniques réalisés hors des projets principaux",
+    description:
+      "Espace dédié à des missions techniques ponctuelles menées en autonomie, en dehors des projets GSB et Soccer.",
+    tags: ["Autonomie", "Technique", "Évolution"],
+    href: "/comptes-rendus/missions-independantes",
+    resume:
+      "Structure prête à accueillir de nouvelles missions avec des cartes claires, des objectifs techniques et des résultats documentés.",
   },
 ];
 
 export default function Page() {
   return (
     <Section
-      title="Comptes rendus"
-      subtitle="Comptes rendus réalisés en cours : projets, missions et contextes."
+      title="Missions"
+      subtitle="Présentation des principales catégories de missions techniques réalisées pendant le BTS SIO SISR."
     >
       <div className="grid gap-4">
-        {projets.map((p) => (
+        {categories.map((category) => (
           <Link
-            key={p.titre}
-            href={p.href}
+            key={category.titre}
+            href={category.href}
             className="
               group
-              rounded-3xl
+              rounded-2xl
               border border-white/10
               bg-white/5
-              p-7
+              p-6
               transition
               duration-300
               hover:bg-white/10
@@ -70,29 +70,29 @@ export default function Page() {
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h2 className="text-2xl font-extrabold tracking-tight text-white">
-                  {p.titre}
+                  {category.titre}
                 </h2>
-                <p className="mt-1 text-white/70">{p.sousTitre}</p>
+                <p className="mt-1 text-white/70">{category.sousTitre}</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
+                {category.tags.map((tag) => (
                   <span
-                    key={t}
+                    key={tag}
                     className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
                   >
-                    {t}
+                    {tag}
                   </span>
                 ))}
               </div>
             </div>
 
-            <p className="mt-4 text-white/75 leading-relaxed">{p.description}</p>
+            <p className="mt-4 text-white/75 leading-relaxed">{category.description}</p>
             <p className="mt-3 text-sm text-white/60 leading-relaxed">
-              {p.resume}
+              {category.resume}
             </p>
             <span className="mt-5 inline-flex items-center text-sm text-white/70">
-              Ouvrir {"->"}
+              Voir les missions {"->"}
             </span>
           </Link>
         ))}

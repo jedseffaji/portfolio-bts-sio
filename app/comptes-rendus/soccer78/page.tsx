@@ -1,189 +1,222 @@
 import Link from "next/link";
 import Section from "../../../components/Section";
 
+type SoccerMission = {
+  title: string;
+  description: string;
+  details: string[];
+  tools: string[];
+  missionHref?: string;
+  reportHref?: string;
+};
+
+const missions: SoccerMission[] = [
+  {
+    title: "Mission 1",
+    description:
+      "Installation de Windows Server, deploiement des roles AD DS, DNS et DHCP, puis structuration initiale de l'annuaire et des services d'infrastructure.",
+    details: [
+      "Installation de Windows Server et definition des roles cles.",
+      "Creation d'une arborescence Active Directory lisible par service.",
+      "Deploiement de DNS et DHCP avec verification du bon fonctionnement.",
+      "Application de GPO de base pour structurer l'environnement.",
+    ],
+    tools: ["ipconfig /all", "nslookup soccer78.local", "Get-ADUser -Filter *"],
+  },
+  {
+    title: "Mission 2",
+    description:
+      "Organisation du reseau, segmentation par VLAN, configuration du switch et integration d'un Wi-Fi separe pour mieux controler les usages.",
+    details: [
+      "Creation d'un plan d'adressage coherent et distribution des postes par VLAN.",
+      "Configuration des ports acces et trunk sur le switch.",
+      "Mise en place d'un Wi-Fi interne securise et d'un Wi-Fi invite isole.",
+      "Validation de la circulation des flux entre les differents segments.",
+    ],
+    tools: ["ping 8.8.8.8", "tracert 10.10.20.10", "route print"],
+  },
+  {
+    title: "Mission 3",
+    description:
+      "Validation technique, securite de base et documentation afin de fiabiliser l'environnement et de conserver une methode de travail claire.",
+    details: [
+      "Verification des baux DHCP, de la resolution DNS et des acces aux partages.",
+      "Application de regles simples de separation des flux et des acces.",
+      "Utilisation d'un serveur Linux comme point de controle et de diagnostic.",
+      "Documentation des etapes, des tests et des resultats obtenus.",
+    ],
+    tools: ["ip a", "ip r", "tail -f /var/log/syslog"],
+  },
+];
+
 export default function Page() {
   return (
     <Section
-      title="Soccer78"
-      subtitle="Projet de 1re année - mise en place d'une infrastructure complète et structurée."
+      title="Soccer"
+      subtitle="Projet de 1re annee axe sur le deploiement d'une infrastructure systemes et reseaux coherente, progressive et documentee."
     >
       <Link
         href="/comptes-rendus"
-        className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 hover:bg-white/10 transition"
+        className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 transition hover:bg-white/10"
       >
-        {"<- Retour aux comptes rendus"}
+        {"<- Retour aux missions"}
       </Link>
 
       <div className="mt-6 grid gap-8">
-        <section>
-          <h2 className="text-xl font-semibold text-white">Contexte</h2>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-2xl font-semibold text-white">Contexte du projet Soccer</h2>
+          <p className="mt-4 text-white/75 leading-relaxed">
+            Soccer est un projet pedagogique utilise pour simuler la mise en place d'un
+            systeme d'information dans un cadre proche d'une PME. L'objectif est de partir
+            d'un environnement simple puis de construire une infrastructure stable,
+            organisee et documentee en mobilisant des competences systemes, reseaux et
+            methodes de travail.
+          </p>
           <p className="mt-3 text-white/75 leading-relaxed">
-            Soccer78 est une entreprise fictive utilisée en cours pour simuler la
-            mise en place d'un SI complet. Le but est de partir d'un réseau simple,
-            puis de construire une infrastructure stable et documentée, comme dans
-            une vraie PME. L'accent est mis sur les bases : services Windows,
-            organisation des comptes, segmentation et services réseau.
+            Le projet permet de travailler l'installation de services Windows, la
+            structuration de l'Active Directory, la gestion du reseau, la segmentation des
+            usages, la securite de base et la validation technique. Il constitue une
+            premiere mission complete de deploiement et d'administration.
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Objectifs</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
-            <li>Installer un Windows Server et définir les rôles clés.</li>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
+            <li>Installer un Windows Server et definir les roles cles.</li>
             <li>Mettre en place un Active Directory propre et lisible.</li>
-            <li>Déployer DNS et DHCP avec tests de bon fonctionnement.</li>
-            <li>Segmenter le réseau avec des VLAN et un plan d'adressage.</li>
+            <li>Deployer DNS et DHCP avec tests de bon fonctionnement.</li>
+            <li>Segmenter le reseau avec des VLAN et un plan d'adressage.</li>
             <li>Configurer un switch Aruba et des bornes Wi-Fi.</li>
-            <li>Documenter et valider chaque étape.</li>
+            <li>Documenter et valider chaque etape.</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-white">Mise en place</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Installation de Windows Server, ajout des rôles AD DS, DNS et DHCP.
-            Création de l'arborescence Active Directory avec des OU par service
-            (Direction, Comptabilité, Technique, Support). Création de groupes
-            globaux, attribution des droits sur les partages, et application de
-            GPO basiques (verrouillage écran, mappage de lecteurs, politique de mot
-            de passe).
-          </p>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Mise en place d'un plan IP clair. Le DHCP distribue par VLAN, avec
-            options passerelle et DNS. Le DNS interne gère les enregistrements
-            pour les serveurs et les postes.
-          </p>
-          <div className="mt-4 grid gap-2">
-            <p className="text-sm font-semibold text-white/80">Commandes utilisées</p>
-            <div className="flex flex-wrap gap-2">
-              <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-                ipconfig /all
-              </span>
-              <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-                ping 8.8.8.8
-              </span>
-              <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-                nslookup soccer78.local
-              </span>
-              <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-                Get-ADUser -Filter *
-              </span>
-            </div>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-2xl font-semibold text-white">Missions</h2>
+          <div className="mt-6 grid gap-8">
+            {missions.map((mission) => (
+              <article
+                key={mission.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              >
+                <h3 className="text-2xl font-semibold text-white">{mission.title}</h3>
+                <p className="mt-3 text-white/75 leading-relaxed">{mission.description}</p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
+                  {mission.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+
+                <div className="mt-5">
+                  <p className="text-sm font-semibold text-white/80">Outils et commandes</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {mission.tools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-6 xl:grid-cols-2">
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                    <h4 className="text-lg font-semibold text-white">Document de mission</h4>
+                    {mission.missionHref ? (
+                      <>
+                        <div className="mt-4 flex justify-end">
+                          <a
+                            href={mission.missionHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+                          >
+                            Voir le document en grand
+                          </a>
+                        </div>
+                        <a
+                          href={mission.missionHref}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+                        >
+                          <iframe
+                            src={mission.missionHref}
+                            title={`${mission.title} document de mission`}
+                            className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
+                          />
+                        </a>
+                      </>
+                    ) : (
+                      <p className="mt-4 text-white/60">
+                        Aucun document de mission Soccer n'est actuellement present dans
+                        /public/Comptes rendus/.
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                    <h4 className="text-lg font-semibold text-white">Procedure / compte rendu associe</h4>
+                    {mission.reportHref ? (
+                      <>
+                        <div className="mt-4 flex justify-end">
+                          <a
+                            href={mission.reportHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+                          >
+                            Voir le document en grand
+                          </a>
+                        </div>
+                        <a
+                          href={mission.reportHref}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+                        >
+                          <iframe
+                            src={mission.reportHref}
+                            title={`${mission.title} compte rendu associe`}
+                            className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
+                          />
+                        </a>
+                      </>
+                    ) : (
+                      <p className="mt-4 text-white/60">
+                        Aucun compte rendu ou aucune procedure Soccer correspondant(e) n'a
+                        ete trouve(e) dans /public/Comptes rendus/.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-white">Réseau, VLAN et Wi-Fi</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            La segmentation est réalisée avec des VLAN pour isoler les services
-            (Admin, Employés, Invités, Serveurs). Sur le switch Aruba, création
-            des VLAN, définition des ports accès et trunks, et étiquetage
-            cohérent pour la lisibilité. Les bornes Wi-Fi diffusent un SSID
-            interne sécurisé (WPA2/WPA3) et un SSID invité isolé sur un VLAN
-            spécifique.
-          </p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
-            <li>Ports accès pour les postes utilisateurs.</li>
-            <li>Port trunk vers le routeur/pfSense pour l'inter-VLAN.</li>
-            <li>VLAN Wi-Fi avec règles de séparation basiques.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Routage</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Le routage est mis en place de façon simple pour relier les VLAN et
-            garantir l'accès aux services internes. Les routes statiques sont
-            vérifiées et les tests confirment la communication inter-réseaux.
-            L'objectif est de comprendre les flux et de valider les chemins.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-              tracert 10.10.20.10
-            </span>
-            <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-              route print
-            </span>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Linux serveur</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Un serveur Linux est intégré pour pratiquer les bases système et
-            réseau. Configuration IP statique, vérification des interfaces,
-            consultation des logs et tests de connectivité. Cela permet de
-            renforcer la polyvalence et la capacité de diagnostic.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-              ip a
-            </span>
-            <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-              ip r
-            </span>
-            <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-              tail -f /var/log/syslog
-            </span>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Sécurité</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Les mesures de base sont appliquées : MDP forts, GPO pour verrouillage,
-            droits minimes sur les partages et séparation des réseaux. pfSense est
-            utilisé pour filtrer les flux entre VLAN, avec des règles simples
-            (autoriser le DNS/DHCP, bloquer l'accès direct entre services).
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Méthode de travail</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            La méthode repose sur un cycle simple : préparation, configuration,
-            tests, correction, puis documentation. Chaque étape est validée avant
-            de passer à la suivante pour éviter les erreurs en cascade. Les
-            captures d'écran et les tableaux de configuration sont conservés.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Tests et validation</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            Chaque service est testé après configuration : attribution d'adresse
-            via DHCP, résolution DNS interne, accès aux partages, et ping entre
-            VLAN. Les tests sont notés dans une fiche de validation et ajustés si
-            besoin.
-          </p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
-            <li>Test de bail DHCP et passerelle.</li>
-            <li>Test de résolution DNS avec nslookup.</li>
-            <li>Test de droits sur dossiers partages.</li>
-            <li>Tracert pour vérifier le chemin réseau.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Résultats</h2>
-          <p className="mt-3 text-white/75 leading-relaxed">
-            L'infrastructure est stable, documentée et exploitable. Les comptes
-            sont propres, les services réseau fonctionnent et la segmentation
-            limite les risques. Le projet valide les bases nécessaires pour
-            administrer un SI de PME.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-white">Compétences mobilisées</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-xl font-semibold text-white">Competences mobilisees</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
             <li>Installation et administration Windows Server.</li>
             <li>Gestion AD (OU, groupes, droits, GPO).</li>
             <li>DNS/DHCP, tests et diagnostic.</li>
             <li>VLAN, switch Aruba, notions de trunk.</li>
-            <li>Wi-Fi sécurisé et segmentation.</li>
-            <li>Méthodologie et documentation.</li>
+            <li>Wi-Fi securise et segmentation.</li>
+            <li>Methodologie et documentation.</li>
           </ul>
+        </section>
+
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-xl font-semibold text-white">Resultats</h2>
+          <p className="mt-3 text-white/75 leading-relaxed">
+            L'infrastructure obtenue est stable, documentee et exploitable. Le projet
+            valide les bases necessaires pour administrer un systeme d'information de PME
+            en combinant organisation, tests, securite et coherence reseau.
+          </p>
         </section>
       </div>
     </Section>

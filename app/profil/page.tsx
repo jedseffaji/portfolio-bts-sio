@@ -13,7 +13,7 @@ function SchoolCard({ title, formation, imageSrc }: SchoolCardProps) {
   const [hasError, setHasError] = useState(false);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
       <div className="mb-4 overflow-hidden rounded-xl border border-white/10 bg-white/5">
         {hasError ? (
           <div className="flex h-40 items-center justify-center text-sm text-white/60">
@@ -200,6 +200,16 @@ export default function Page() {
         <p className="mt-2 text-zinc-200">
           Prévisualisation du CV. Cliquez pour l’ouvrir en grand.
         </p>
+        <div className="mt-3 flex justify-end">
+          <a
+            href="/cv/CV.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+          >
+            Voir le document en grand
+          </a>
+        </div>
         <a
           href="/cv/CV.pdf"
           target="_blank"

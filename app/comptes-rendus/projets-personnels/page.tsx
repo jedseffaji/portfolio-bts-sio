@@ -11,11 +11,11 @@ export default function Page() {
         href="/comptes-rendus"
         className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 hover:bg-white/10 transition"
       >
-        {"<- Retour aux comptes rendus"}
+        {"<- Retour aux missions"}
       </Link>
 
       <div className="mt-6 grid gap-8">
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Contexte du projet</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             Ce projet personnel a été réalisé en autonomie, dans un environnement
@@ -27,7 +27,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Architecture mise en place</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             L'architecture repose sur quatre machines principales :
@@ -50,7 +50,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Mise en œuvre technique</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             Le Windows Server a été installé en premier. J'ai ajouté les rôles
@@ -74,7 +74,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Commandes et outils utilisés</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             Les commandes suivantes ont été utilisées pour valider les services
@@ -112,7 +112,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Tests et validation</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             La connectivité a été vérifiée entre toutes les machines. Le poste
@@ -128,7 +128,7 @@ export default function Page() {
           </ul>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Résultats et apports</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
             Le projet m'a permis de consolider les fondamentaux. J'ai gagné en
@@ -138,7 +138,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Compétences mobilisées</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-white/75">
             <li>Systèmes : installation Windows Server et Linux.</li>
@@ -153,7 +153,7 @@ export default function Page() {
             href="/comptes-rendus"
             className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 hover:bg-white/10 transition"
           >
-            {"<- Retour aux comptes rendus"}
+            {"<- Retour aux missions"}
           </Link>
         </div>
       </div>

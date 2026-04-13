@@ -6,8 +6,8 @@ const PDF_HREF = "/Comptes%20rendus/Biogroup.pdf";
 export default function Page() {
   return (
     <Section
-      title="Compte rendu Biogroup"
-      subtitle="Prévisualisation du compte rendu de stage Biogroup."
+      title="Mission Biogroup"
+      subtitle="Prévisualisation du document de mission du stage Biogroup."
     >
       <div className="flex flex-wrap items-center gap-3">
         <Link
@@ -18,8 +18,18 @@ export default function Page() {
         </Link>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5">
-        <h2 className="text-lg font-semibold text-white">Compte rendu (PDF)</h2>
+      <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+        <h2 className="text-lg font-semibold text-white">Document de mission (PDF)</h2>
+        <div className="mt-4 flex justify-end">
+          <a
+            href={PDF_HREF}
+            target="_blank"
+            rel="noreferrer"
+            className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+          >
+            Voir le document en grand
+          </a>
+        </div>
         <a
           href={PDF_HREF}
           target="_blank"
@@ -28,7 +38,7 @@ export default function Page() {
         >
           <iframe
             src={PDF_HREF}
-            title="Prévisualisation compte rendu Biogroup"
+            title="Prévisualisation mission Biogroup"
             className="h-[540px] w-full rounded-xl border border-white/10 bg-black/20"
           />
         </a>

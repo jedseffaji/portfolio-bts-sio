@@ -3,10 +3,10 @@ import Link from "next/link";
 const linkClass =
   "rounded-xl px-3 py-2 text-sm text-white/70 hover:bg-white/10 hover:text-white transition";
 
-const comptesRendus = [
-  { label: "Soccer78", href: "/comptes-rendus/soccer78" },
+const missions = [
+  { label: "Soccer", href: "/comptes-rendus/soccer78" },
   { label: "GSB", href: "/comptes-rendus/gsb" },
-  { label: "Projets personnels", href: "/comptes-rendus/projets-personnels" },
+  { label: "Missions indépendantes", href: "/comptes-rendus/missions-independantes" },
 ];
 
 const stages = [
@@ -71,7 +71,7 @@ export default function Navbar() {
 
           <div className="group relative flex items-center">
             <Link href="/comptes-rendus" className={`${linkClass} inline-flex items-center gap-1`}>
-              Comptes rendus
+              Missions
               <span className="text-xs text-white/50">v</span>
             </Link>
             <div className="absolute left-0 top-full z-50 pt-2 pointer-events-none group-hover:pointer-events-auto">
@@ -94,7 +94,7 @@ export default function Navbar() {
                   translate-y-1
                 "
               >
-                {comptesRendus.map((item) => (
+                {missions.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}

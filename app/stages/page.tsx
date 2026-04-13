@@ -46,7 +46,7 @@ const stages: Stage[] = [
     ],
     technos: ["Automates", "Outil MPL", "Tests", "Procédures"],
     documents: [
-      { label: "Compte rendu de stage (PDF)", href: `${PDF_BASE}/biogroup-compte-rendu.pdf` },
+      { label: "Document de mission (PDF)", href: `${PDF_BASE}/biogroup-compte-rendu.pdf` },
     ],
   },
   {
@@ -68,7 +68,7 @@ const stages: Stage[] = [
     ],
     technos: ["Windows", "Logiciels métiers", "Liciel", "Gestion de données"],
     documents: [
-      { label: "Compte rendu de stage (PDF)", href: `${PDF_BASE}/xpertdiag-compte-rendu.pdf` },
+      { label: "Document de mission (PDF)", href: `${PDF_BASE}/xpertdiag-compte-rendu.pdf` },
     ],
   },
   {
@@ -90,7 +90,7 @@ const stages: Stage[] = [
     ],
     technos: ["Routeurs", "Firewall", "Ticketing", "Datacenter", "Support IT"],
     documents: [
-      { label: "Compte rendu de stage (PDF)", href: `${PDF_BASE}/utb-compte-rendu.pdf` },
+      { label: "Document de mission (PDF)", href: `${PDF_BASE}/utb-compte-rendu.pdf` },
     ],
   },
   {
@@ -131,10 +131,9 @@ const stages: Stage[] = [
       { label: "Installation / configuration GPU (3080)", href: "/procedures-Elior/3080.pdf" },
       { label: "Gestion des mots de passe (KeePass)", href: "/procedures-Elior/keepass.pdf" },
       { label: "Masterisation SES", href: "/procedures-Elior/SES.pdf" },
-      { label: "S\u00e9curit\u00e9 YubiKey", href: "/procedures-Elior/Yubikey.pdf" },
+      { label: "Sécurité YubiKey", href: "/procedures-Elior/Yubikey.pdf" },
     ],
   },
-
 ];
 
 export default function Page() {
@@ -163,115 +162,114 @@ export default function Page() {
               hover:-translate-y-1
               hover:shadow-2xl
             "
-          >
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex items-center gap-3">
-                <CompanyLogo
-                  src={s.logoSrc}
-                  alt={`Logo ${s.entreprise}`}
-                  initials={s.logoInitials}
-                  size="md"
-                  className="shrink-0"
-                />
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-center gap-3">
+                  <CompanyLogo
+                    src={s.logoSrc}
+                    alt={`Logo ${s.entreprise}`}
+                    initials={s.logoInitials}
+                    size="md"
+                    className="shrink-0"
+                  />
+                  <div>
+                    <h2 className="text-xl font-semibold text-white">{s.titre}</h2>
+                    <p className="mt-1 text-white/70">
+                      {s.entreprise} — {s.ville}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-start gap-2 sm:items-end">
+                  <p className="text-sm text-white/60">{s.dates}</p>
+                </div>
+              </div>
+
+              <p className="mt-4 text-white/75">{s.descriptionEntreprise}</p>
+
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 <div>
-                  <h2 className="text-xl font-semibold text-white">{s.titre}</h2>
-                  <p className="mt-1 text-white/70">
-                    {s.entreprise} — {s.ville}
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-start gap-2 sm:items-end">
-                <p className="text-sm text-white/60">{s.dates}</p>
-              </div>
-            </div>
-
-            <p className="mt-4 text-white/75">{s.descriptionEntreprise}</p>
-
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              <div>
-                <h3 className="text-sm font-semibold text-white/85">Missions réalisées</h3>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-white/75">
-                  {s.missions.map((m) => (
-                    <li key={m}>{m}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-white/85">Outils / technologies</h3>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {s.technos.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  <h3 className="text-sm font-semibold text-white/85">Missions réalisées</h3>
+                  <ul className="mt-2 list-disc space-y-1 pl-5 text-white/75">
+                    {s.missions.map((m) => (
+                      <li key={m}>{m}</li>
+                    ))}
+                  </ul>
                 </div>
 
-                <h3 className="mt-5 text-sm font-semibold text-white/85">Documents</h3>
+                <div>
+                  <h3 className="text-sm font-semibold text-white/85">Outils / technologies</h3>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {s.technos.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 className="mt-5 text-sm font-semibold text-white/85">Documents</h3>
+                  {isElior ? (
+                    <p className="text-sm text-white/60">
+                      Procédures disponibles sur la page dédiée.
+                    </p>
+                  ) : (
+                    <p className="text-sm text-white/60">
+                      Mission disponible sur la page dédiée.
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-6 flex justify-end">
                 {isElior ? (
-                  <p className="text-sm text-white/60">
-                    Procédures disponibles sur la page dédiée.
-                  </p>
+                  <Link
+                    href="/stages/elior/procedures"
+                    className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-center
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/5
+                    px-8
+                    py-4
+                    text-lg
+                    font-semibold
+                    text-white
+                    hover:bg-white/10
+                    transition
+                  "
+                  >
+                    Procédures
+                  </Link>
                 ) : (
-                  <p className="text-sm text-white/60">
-                    Compte rendu disponible sur la page dédiée.
-                  </p>
+                  <Link
+                    href={compteRenduRoutes[s.id]}
+                    className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    text-center
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/5
+                    px-8
+                    py-4
+                    text-lg
+                    font-semibold
+                    text-white
+                    hover:bg-white/10
+                    transition
+                  "
+                  >
+                    Mission
+                  </Link>
                 )}
               </div>
-            </div>
-
-            <div className="mt-6 flex justify-end">
-              {isElior ? (
-                <Link
-                  href="/stages/elior/procedures"
-                  className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    text-center
-                    rounded-2xl
-                    border border-white/10
-                    bg-white/5
-                    px-8
-                    py-4
-                    text-lg
-                    font-semibold
-                    text-white
-                    hover:bg-white/10
-                    transition
-                  "
-                >
-                  Procédures
-                </Link>
-              ) : (
-                <Link
-                  href={compteRenduRoutes[s.id]}
-                  className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    text-center
-                    rounded-2xl
-                    border border-white/10
-                    bg-white/5
-                    px-8
-                    py-4
-                    text-lg
-                    font-semibold
-                    text-white
-                    hover:bg-white/10
-                    transition
-                  "
-                >
-                  Compte rendu
-                </Link>
-              )}
-            </div>
-
-          </article>
+            </article>
           );
         })}
       </div>

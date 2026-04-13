@@ -1,48 +1,96 @@
 import Link from "next/link";
 import Section from "../../../components/Section";
 
+type Mission = {
+  title: string;
+  description: string;
+  missionHref: string;
+  procedureHref: string;
+};
+
+const missions: Mission[] = [
+  {
+    title: "Mission 1",
+    description:
+      "Déploiement d'un domaine Active Directory, segmentation du réseau, configuration des switches et mise en place des premières règles de filtrage.",
+    missionHref: "/Comptes%20rendus/gsb/Mission1.pdf",
+    procedureHref: "/Comptes%20rendus/gsb/proc%C3%A9dures%20gsb/mission%201.pdf",
+  },
+  {
+    title: "Mission 2",
+    description:
+      "Intégration du Wi-Fi dans un VLAN dédié, isolation des postes nomades, mise en place du NAT et publication de services applicatifs.",
+    missionHref: "/Comptes%20rendus/gsb/Mission2.pdf",
+    procedureHref: "/Comptes%20rendus/gsb/proc%C3%A9dures%20gsb/mission%202.pdf",
+  },
+  {
+    title: "Mission 3",
+    description:
+      "Gestion de parc, déploiement de services réseau complémentaires et mise en place d'outils de centralisation et d'administration.",
+    missionHref: "/Comptes%20rendus/gsb/Mission3.pdf",
+    procedureHref: "/Comptes%20rendus/gsb/proc%C3%A9dures%20gsb/mission%203.pdf",
+  },
+  {
+    title: "Mission 4",
+    description:
+      "Messagerie, réplication Active Directory et continuité de service pour renforcer la disponibilité globale de l'infrastructure.",
+    missionHref: "/Comptes%20rendus/gsb/Mission4.pdf",
+    procedureHref: "/Comptes%20rendus/gsb/proc%C3%A9dures%20gsb/Mission%204.pdf",
+  },
+];
+
 export default function Page() {
   return (
     <Section
-      title="Projet GSB — Infrastructure systèmes et réseaux"
-      subtitle="Projet de 2e année axé sur la conception, la sécurisation et le déploiement d’une infrastructure complète."
+      title="Projet GSB - Infrastructure systemes et reseaux"
+      subtitle="Projet de 2e annee axe sur la conception, la securisation et le deploiement d'une infrastructure complete."
     >
       <Link
         href="/comptes-rendus"
-        className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 hover:bg-white/10 transition"
+        className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85 transition hover:bg-white/10"
       >
-        {"<- Retour aux comptes rendus"}
+        {"<- Retour aux missions"}
       </Link>
 
       <div className="mt-6 grid gap-8">
-        <section className="mb-10 rounded-xl border border-white/10 bg-zinc-900 p-6">
+        <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="mb-4 text-3xl font-bold text-white">Contexte du projet GSB</h2>
           <div className="space-y-4">
             <p className="text-zinc-200 leading-relaxed">
-              Le laboratoire Galaxy Swiss Bourdin (GSB) est une entreprise issue d’une
-              fusion de plusieurs groupes pharmaceutiques, ce qui a entraîné une infrastructure
-              informatique hétérogène et peu sécurisée.
+              Le laboratoire Galaxy Swiss Bourdin (GSB) est une entreprise issue d'une
+              fusion de plusieurs groupes pharmaceutiques, ce qui a entraine une
+              infrastructure informatique heterogene et peu securisee.
             </p>
             <ul className="list-disc space-y-2 pl-5 text-zinc-200">
-              <li>Absence de centralisation des données utilisateurs</li>
+              <li>Absence de centralisation des donnees utilisateurs</li>
               <li>Utilisation de messageries non professionnelles</li>
-              <li>Manque de cloisonnement réseau</li>
+              <li>Manque de cloisonnement reseau</li>
               <li>Risques de coupure de service</li>
-              <li>Difficulté de supervision et de gestion du parc</li>
+              <li>Difficulte de supervision et de gestion du parc</li>
             </ul>
             <p className="text-zinc-200 leading-relaxed">
-              L’objectif des missions est donc de concevoir, sécuriser et déployer une
-              infrastructure réseau complète, intégrant des services métiers accessibles
-              en interne et depuis l’extérieur.
+              L'objectif des missions est donc de concevoir, securiser et deployer une
+              infrastructure reseau complete, integrant des services metiers accessibles
+              en interne et depuis l'exterieur.
             </p>
+            <div className="flex justify-end">
+              <a
+                href="/Comptes%20rendus/gsb/contexte%20gsb.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+              >
+                Voir le document en grand
+              </a>
+            </div>
             <a
-              href="/Comptes%20rendus/missions%20gsb/contexte%20gsb.pdf"
+              href="/Comptes%20rendus/gsb/contexte%20gsb.pdf"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+              className="block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
             >
               <iframe
-                src="/Comptes%20rendus/missions%20gsb/contexte%20gsb.pdf"
+                src="/Comptes%20rendus/gsb/contexte%20gsb.pdf"
                 title="Contexte du projet GSB"
                 className="h-[520px] w-full rounded-xl border border-white/10 bg-black/20"
               />
@@ -51,121 +99,86 @@ export default function Page() {
         </section>
 
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 className="text-xl font-semibold text-white">Architecture réseau</h2>
+          <h2 className="text-xl font-semibold text-white">Architecture reseau</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
             <li>LAN : postes utilisateurs et serveurs internes</li>
-            <li>DMZ : serveurs exposés (web, mail, Nextcloud)</li>
-            <li>WAN : accès Internet</li>
-            <li>WIFI : postes nomades isolés dans un VLAN dédié</li>
+            <li>DMZ : serveurs exposes (web, mail, Nextcloud)</li>
+            <li>WAN : acces Internet</li>
+            <li>WIFI : postes nomades isoles dans un VLAN dedie</li>
           </ul>
           <p className="mt-3 text-white/75 leading-relaxed">
-            Le routage et la sécurité sont assurés par un pare-feu pfSense virtualisé,
+            Le routage et la securite sont assures par un pare-feu pfSense virtualise,
             permettant le filtrage des flux, le NAT, le port forwarding et la segmentation
-            réseau.
+            reseau.
           </p>
         </section>
 
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 className="text-xl font-semibold text-white">Missions</h2>
-          <div className="mt-5 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-black/30 p-5">
-              <h3 className="text-lg font-semibold text-white">
-                Mission 1 — Active Directory et segmentation réseau
-              </h3>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
-                <li>Déploiement d’un domaine Active Directory sous Windows Server 2022</li>
-                <li>Segmentation du réseau via VLAN</li>
-                <li>Configuration des switches en 802.1Q</li>
-                <li>Routage inter-VLAN via pfSense</li>
-                <li>Mise en place de règles firewall pour contrôler les flux</li>
-              </ul>
-              <a
-                href="/Comptes%20rendus/missions%20gsb/Mission1.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+          <h2 className="text-2xl font-semibold text-white">Missions</h2>
+          <div className="mt-6 grid gap-8">
+            {missions.map((mission) => (
+              <article
+                key={mission.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6"
               >
-                <iframe
-                  src="/Comptes%20rendus/missions%20gsb/Mission1.pdf"
-                  title="Mission 1 GSB"
-                  className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
-                />
-              </a>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-black/30 p-5">
-              <h3 className="text-lg font-semibold text-white">
-                Mission 2 — WiFi, NAT et déploiement applicatif
-              </h3>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
-                <li>Intégration d’une borne WiFi dans un VLAN dédié</li>
-                <li>Isolation des postes nomades</li>
-                <li>Mise en place du NAT et du port forwarding sur pfSense</li>
-                <li>Publication de services en DMZ</li>
-                <li>Déploiement d’une application métier sur serveur Linux</li>
-                <li>Stockage configuré en RAID1</li>
-              </ul>
-              <a
-                href="/Comptes%20rendus/missions%20gsb/Mission2.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
-              >
-                <iframe
-                  src="/Comptes%20rendus/missions%20gsb/Mission2.pdf"
-                  title="Mission 2 GSB"
-                  className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
-                />
-              </a>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-black/30 p-5">
-              <h3 className="text-lg font-semibold text-white">
-                Mission 3 — Gestion de parc et services réseau
-              </h3>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
-                <li>Déploiement d’un serveur GLPI</li>
-                <li>Remontée automatique d’informations via des agents</li>
-                <li>Mise en place d’un cloud interne Nextcloud</li>
-                <li>Authentification Active Directory</li>
-                <li>Accès LAN et WAN</li>
-                <li>Stockage via LVM</li>
-              </ul>
-              <a
-                href="/Comptes%20rendus/missions%20gsb/GSB%20Mission3.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
-              >
-                <iframe
-                  src="/Comptes%20rendus/missions%20gsb/GSB%20Mission3.pdf"
-                  title="Mission 3 GSB"
-                  className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
-                />
-              </a>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-black/30 p-5">
-              <h3 className="text-lg font-semibold text-white">
-                Mission 4 — Messagerie et haute disponibilité
-              </h3>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-white/75">
-                <li>Mise en place d’une infrastructure mail (Postfix, Dovecot, Rainloop)</li>
-                <li>Accès interne et externe via NAT</li>
-                <li>Déploiement d’un second serveur Windows Server</li>
-                <li>Réplication Active Directory</li>
-                <li>Continuité de service</li>
-              </ul>
-              <a
-                href="/Comptes%20rendus/missions%20gsb/GSB%20Mission4.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
-              >
-                <iframe
-                  src="/Comptes%20rendus/missions%20gsb/GSB%20Mission4.pdf"
-                  title="Mission 4 GSB"
-                  className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
-                />
-              </a>
-            </div>
+                <h3 className="text-2xl font-semibold text-white">{mission.title}</h3>
+                <p className="mt-3 text-white/75 leading-relaxed">{mission.description}</p>
+
+                <div className="mt-6 grid gap-6 xl:grid-cols-2">
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                    <h4 className="text-lg font-semibold text-white">Document de mission</h4>
+                    <div className="mt-4 flex justify-end">
+                      <a
+                        href={mission.missionHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+                      >
+                        Voir le document en grand
+                      </a>
+                    </div>
+                    <a
+                      href={mission.missionHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+                    >
+                      <iframe
+                        src={mission.missionHref}
+                        title={`${mission.title} document de mission`}
+                        className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
+                      />
+                    </a>
+                  </div>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                    <h4 className="text-lg font-semibold text-white">Procedure / compte rendu associe</h4>
+                    <div className="mt-4 flex justify-end">
+                      <a
+                        href={mission.procedureHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mb-2 inline-flex items-center rounded-lg bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700"
+                      >
+                        Voir le document en grand
+                      </a>
+                    </div>
+                    <a
+                      href={mission.procedureHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block rounded-xl border border-white/10 bg-black/20 p-2 transition hover:bg-black/40"
+                    >
+                      <iframe
+                        src={mission.procedureHref}
+                        title={`${mission.title} procedure associee`}
+                        className="h-[420px] w-full rounded-xl border border-white/10 bg-black/20"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -173,31 +186,31 @@ export default function Page() {
           <h2 className="text-xl font-semibold text-white">Supervision</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
             <li>Zabbix pour le monitoring des serveurs et services</li>
-            <li>Wireshark pour l’analyse du trafic</li>
-            <li>Détection des anomalies et surveillance des performances</li>
+            <li>Wireshark pour l'analyse du trafic</li>
+            <li>Detection des anomalies et surveillance des performances</li>
           </ul>
         </section>
 
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Automatisation</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-white/75">
-            <li>Scripts PowerShell pour la création et la suppression de comptes</li>
+            <li>Scripts PowerShell pour la creation et la suppression de comptes</li>
             <li>Gestion des OU</li>
             <li>Journalisation des actions dans des fichiers logs</li>
           </ul>
         </section>
 
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <h2 className="text-xl font-semibold text-white">Compétences développées</h2>
+          <h2 className="text-xl font-semibold text-white">Competences developpees</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {[
               "pfSense",
               "VLAN",
               "Active Directory",
-              "Sécurité réseau",
+              "Securite reseau",
               "Supervision",
               "Automatisation",
-              "Haute disponibilité",
+              "Haute disponibilite",
             ].map((skill) => (
               <span
                 key={skill}
@@ -212,11 +225,11 @@ export default function Page() {
         <section className="rounded-2xl border border-white/10 bg-white/5 p-6">
           <h2 className="text-xl font-semibold text-white">Conclusion</h2>
           <p className="mt-3 text-white/75 leading-relaxed">
-            Ces missions permettent de concevoir une infrastructure complète, sécurisée et
-            segmentée, intégrant des services accessibles depuis l’extérieur tout en
-            maîtrisant les flux réseau. Elles représentent une mise en situation
-            professionnelle réaliste couvrant l’ensemble des compétences attendues en
-            administration systèmes et réseaux.
+            Ces missions permettent de concevoir une infrastructure complete, securisee et
+            segmentee, integrant des services accessibles depuis l'exterieur tout en
+            maitrisant les flux reseau. Elles representent une mise en situation
+            professionnelle realiste couvrant l'ensemble des competences attendues en
+            administration systemes et reseaux.
           </p>
         </section>
       </div>
